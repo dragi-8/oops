@@ -1,9 +1,13 @@
 class chatbook:
+
+    __user_id=0
     def __init__(self):
         self.__name='Default user'
         self.username=""
         self.password=""
         self.logged_in=False
+        self.userid=chatbook.__user_id
+        chatbook.__user_id +=1
        # self.menu()
 
     def menu(self):
@@ -30,8 +34,15 @@ class chatbook:
             self.menu()
         else:
             print('invalid choice')
+     
             exit()        
-                
+    @staticmethod
+    def get_userid():
+        return chatbook.__user_id
+    @staticmethod
+    def set_userid(val)    :
+         chatbook.__user_id= val    
+        
     def get_name(self):
         return self.__name
     
